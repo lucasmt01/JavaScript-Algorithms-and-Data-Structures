@@ -6,11 +6,13 @@ document.getElementById('check-btn').addEventListener('click', function() {
     if (inputValue === '') {
       alert('Please input a value');
     } else {
-      var cleanedInput = inputValue.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
-      var isPalindrome = cleanedInput === cleanedInput.split('').reverse().join('');
-  
       var words = inputValue.split(' ');
-      var resultText = isPalindrome ? `<span>${words[0]}</span> ${words.slice(1).join(' ')} is a palindrome` : `${inputValue} is not a palindrome`;
+  
+      // Verifica se a primeira palavra é um palíndromo
+      var isPalindrome = words[0].toLowerCase() === words[0].toLowerCase().split('').reverse().join('');
+  
+      // Wrap only the first word in a <strong> tag
+      var resultText = isPalindrome ? `<strong>${words[0]}</strong> ${words.slice(1).join(' ')} is a palindrome` : `<strong>${words[0]}</strong> ${words.slice(1).join(' ')} is not a palindrome`;
   
       resultElement.innerHTML = resultText;
   

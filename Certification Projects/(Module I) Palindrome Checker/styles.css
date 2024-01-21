@@ -77,8 +77,7 @@ label {
     text-align: center;
 }
 
-#result span {
-    font-weight: normal; 
+#result strong {
     font-weight: bold;   
   }
 
